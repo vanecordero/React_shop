@@ -9,6 +9,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"), //Path para q sea en la misma ubicacion y dist el nombre de la carpeta
     filename: "bundle.js", //Nombre del archivo compilado
+    publicPath: "/",
   },
   mode: "development",
   //Las extensiones que se usaran
@@ -34,7 +35,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.(css|scss)$/,
         use: ["style-loader", "css-loader", "sass-loader"],
       },
     ],
@@ -50,6 +51,7 @@ module.exports = {
   ],
   // Para que el servidor funcione correctamente en desarrollo
   devServer: {
+    historyApiFallback: true,
     static: {
       directory: path.join(__dirname, "public"),
     },
