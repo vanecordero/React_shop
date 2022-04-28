@@ -1,8 +1,8 @@
 import React from "react";
-import OrderItem from "../components/OrderItem";
+import { OrderItem } from "../components/OrderItem";
 import "../styles/Orders.scss";
 
-export const Order = () => {
+export const Orders = () => {
   return (
     <div className="Orders">
       <div className="Orders-container">
