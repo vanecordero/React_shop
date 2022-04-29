@@ -17,11 +17,13 @@ module.exports = {
     extensions: [".js", ".jsx"],
     alias: {
       "@components": path.resolve(__dirname, "src/components/"),
-      "@container": path.resolve(__dirname, "src/containers/"),
+      "@containers": path.resolve(__dirname, "src/containers/"),
       "@pages": path.resolve(__dirname, "src/pages/"),
       "@styles": path.resolve(__dirname, "src/styles/"),
       "@icons": path.resolve(__dirname, "src/assets/icons/"),
       "@logos": path.resolve(__dirname, "src/assets/logos/"),
+      "@context": path.resolve(__dirname, "src/context/"),
+      "@hooks": path.resolve(__dirname, "src/hooks/"),
     },
   },
   //Las reglas de configuracion
