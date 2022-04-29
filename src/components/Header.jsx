@@ -1,9 +1,9 @@
 import React from "react";
 import "@styles/Header.scss";
 
-import { icon_menu } from "@icons/icon_menu.svg";
-import { logo_yard } from "@logos/logo_yard_sale.svg";
-import { icon_shopping_cart } from "@icons/icon_shopping_cart.svg";
+import icon_menu from "@icons/icon_menu.svg";
+import logo_yard from "@logos/logo_yard_sale.svg";
+import icon_shopping_cart from "@icons/icon_shopping_cart.svg";
 
 export const Header = () => {
   return (

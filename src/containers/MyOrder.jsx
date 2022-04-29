@@ -1,6 +1,7 @@
 import React from "react";
-import OrderItem from "../components/OrderItem";
-import "../styles/MyOrder.scss";
+import OrderItem from "@components/OrderItem";
+import "@styles/MyOrder.scss";
+import flechita from "@icons/flechita.svg";
 
 export const MyOrder = () => {
   return (
@@ -17,7 +18,7 @@ export const MyOrder = () => {
           </p>
           <p>$560.00</p>
         </div>
-        <button className="primary-button">Checkout</button>
+        <button className={flechita}>Checkout</button>
       </div>
     </aside>
   );
