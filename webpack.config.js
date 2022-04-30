@@ -2,6 +2,8 @@ const path = require("path"); //Saber donde esta ubicado el proyecto
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+
 module.exports = {
   //obj con la configuracion
   entry: "./src/index.js", //punto de entrada del proyecto
@@ -62,6 +64,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name].css",
     }),
+    new CleanWebpackPlugin(),
   ],
   // Para que el servidor funcione correctamente en desarrollo
   devServer: {
