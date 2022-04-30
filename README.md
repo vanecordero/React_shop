@@ -10,7 +10,7 @@ build with react & react-dom as my practices with React and Webpack.
 
 - React, webpack, babel, axios
 - HTML/SCSS
-- Deployment of the web app on Netlify from Git repository.
+- Deployment of the web app with githu pages from Git repository CI.
 
 ### API
 
