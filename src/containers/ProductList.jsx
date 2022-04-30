@@ -3,10 +3,10 @@ import { ProductItem } from "@components/ProductItem";
 import "@styles/ProductList.scss";
 import { useGetProduct } from "../hooks/useGetProducts";
 
-const API = "https://api.escuelajs.co/api/v1/products";
+const API = process.env.API;
 
 export const ProductList = () => {
-  const products = useGetProduct(API);
+  const products = useGetProduct(`${API}products`);
 
   return (
     <section className="main-container">
