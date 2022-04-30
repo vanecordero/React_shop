@@ -2,10 +2,16 @@
 
 .MyOrder {
 	width: 360px;
+	height: fit-content;
 	padding: 24px;
 	box-sizing: border-box;
 	position: absolute;
 	right: 0;
+	background-color: var(--white);
+	top: 60px;
+	bottom: 0;
+	border-radius: 6px;
+	border:  1px solid var(--very-light-pink);
 }
 .title-container {
 	display: flex;

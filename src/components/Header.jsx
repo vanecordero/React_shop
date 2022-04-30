@@ -5,14 +5,16 @@ import icon_menu from "@icons/icon_menu.svg";
 import logo_yard from "@logos/logo_yard_sale.svg";
 import icon_shopping_cart from "@icons/icon_shopping_cart.svg";
 import { AppContext } from "@context/AppContext";
+import { MyOrder } from "@containers/MyOrder";
 
 export const Header = () => {
   const [toogle, setToogle] = useState(false);
+  const [toogleOrder, setToogleOrder] = useState(false);
   const { state } = useContext(AppContext);
 
-  const handleToogle = () => {
-    setToogle(!toogle);
-  };
+  const handleToogle = () => setToogle(!toogle);
+  const handleToogleOrder = () => setToogleOrder(!toogleOrder);
+
   return (
     <nav>
       <img src={icon_menu} alt="menu" className="menu" />
@@ -47,13 +49,14 @@ export const Header = () => {
           <li className="navbar-email" onClick={handleToogle}>
             hi@example.com
           </li>
-          <li className="navbar-shopping-cart">
+          <li className="navbar-shopping-cart" onClick={handleToogleOrder}>
             <img src={icon_shopping_cart} alt="shopping cart" />
             {state.cart.length > 0 ? <div>{state.cart.length}</div> : null}
           </li>
         </ul>
       </div>
       {toogle && <Menu />}
+      {toogleOrder && <MyOrder />}
     </nav>
   );
 };
