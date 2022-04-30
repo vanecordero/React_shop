@@ -23,7 +23,7 @@ export const CreateAccount = () => {
             <input
               type="text"
               id="email"
-              placeholder="platzi@example.com"
+              placeholder="hi@example.com"
               className="input input-email"
             />
             <label for="password" className="label">
