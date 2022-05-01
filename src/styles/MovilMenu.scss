@@ -1,0 +1,37 @@
+@media (max-width: 640px) {
+
+    .navbar-rigth--movil ul {
+        position: absolute;
+        margin: 0;
+        left: 0;
+        top: 60px;
+        height: fit-content;
+        width: 50vw;
+        border: 1px solid var(--very-light-pink);
+        display: flex;
+        flex-direction: column;
+        background: var(--white);
+        align-content: space-between;
+        padding: 1rem;
+        box-shadow: 3px 3px 0px 0 rgb(172 217 178);
+        width: 50vw;
+        border-radius: 0 0 15px 0;
+    }
+    .navbar-rigth--movil ul li{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .navbar-rigth--movil a{
+        color: var(--black);
+        text-decoration: none;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+
+    .navbar-rigth--movil li:last-child a {
+        color: var(--hospital-green);
+        font-size: var(--sm);
+    }
+}

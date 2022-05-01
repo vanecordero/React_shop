@@ -1,20 +1,25 @@
 import React from "react";
-import "../styles/Menu.scss";
+import "@styles/Menu.scss";
+import { Link } from "react-router-dom";
 
-export const Menu = () => {
+export const Menu = ({ hide }) => {
   return (
     <div className="Menu">
       <ul>
         <li>
-          <a href="/" className="title">
+          <Link to="/" className="title" onClick={hide}>
             My orders
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/">My account</a>
+          <Link to="/" onClick={hide}>
+            My account
+          </Link>
         </li>
         <li>
-          <a href="/">Sign out</a>
+          <Link to="/login" onClick={hide}>
+            Sign out
+          </Link>
         </li>
       </ul>
     </div>
