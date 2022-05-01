@@ -14,26 +14,43 @@ const API = process.env.API;
 export const Header = () => {
   const categories = useGetCategory(`${API}categories`);
   const [toogle, setToogle] = useState(false);
+  const [toogleMovilMenu, setToogleMovilMenu] = useState(true);
   const [toogleOrder, setToogleOrder] = useState(false);
   const { state, addCategories, addCategoryId } = useContext(AppContext);
 
   useEffect(() => {
     categories.length !== 0 && addCategories(categories);
   }, [categories]);
+
   const handleToogle = () => setToogle(!toogle);
   const handleToogleOrder = () => setToogleOrder(!toogleOrder);
-  const setCategoryId = (id) => addCategoryId(id);
+  const handleClick = () => setToogleMovilMenu(!toogleMovilMenu);
+
+  const setCategoryId = (id) => {
+    addCategoryId(id);
+    !toogleMovilMenu && setToogleMovilMenu(!toogleMovilMenu);
+  };
 
   return (
     <nav>
-      <img src={icon_menu} alt="menu" className="menu" />
+      {/* <img src={icon_menu} alt="menu" className=""/> */}
+      <div
+        className={`menu nav-icon1 ${!toogleMovilMenu && "open"} `}
+        onClick={handleClick}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
       <div className="navbar-left">
         <img src={logo_yard} alt="logo" className="nav-logo" />
 
-        <ul>
+        <ul className={`${toogleMovilMenu && "menu-show"} `}>
           <li>
-            <Link to="/">All</Link>
+            <Link to="/" onClick={() => setCategoryId("")}>
+              All
+            </Link>
           </li>
           <li>
             {categories.map(({ name, id }) => (
