@@ -56,7 +56,7 @@ export const Header = () => {
           )}
         </div>
 
-        <div className="navbar-left">
+        <div className="navbar-left desk-menu">
           <DesktopMenu
             categories={categories}
             fn={setCategoryId}
@@ -64,7 +64,7 @@ export const Header = () => {
           />
         </div>
       </div>
-      <div className="navbar-right">
+      <div className="navbar-right desk-menu">
         <ul>
           <li className="navbar-shopping-cart" onClick={handleToogleOrder}>
             <img src={icon_shopping_cart} alt="shopping cart" />
@@ -73,7 +73,7 @@ export const Header = () => {
         </ul>
       </div>
       {toogle && <Menu hide={handleToogle} />}
-      {toogleOrder && <MyOrder />}
+      {toogleOrder && <MyOrder hide={handleToogleOrder} />}
     </nav>
   );
 };

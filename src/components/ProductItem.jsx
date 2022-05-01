@@ -3,11 +3,16 @@ import "@styles/ProductItem.scss";
 import { AppContext } from "@context/AppContext";
 import bt_add_to_cart from "@icons/bt_add_to_cart.svg";
 import empty from "@icons/green_ferniture.png";
+import added_to_cart from "@icons/bt_added_to_cart.svg";
 
 export const ProductItem = ({ product }) => {
-  const { addToCart } = useContext(AppContext);
+  const { addToCart, removeFromCart, state } = useContext(AppContext);
+  const handleClick = (item) => {
+    itsProductAdded() ? removeFromCart(item) : addToCart(item);
+  };
 
-  const handleClick = (item) => addToCart(item);
+  const itsProductAdded = () =>
+    state.cart.some((item) => item.id === product.id) ? true : false;
 
   return (
     <div className="ProductItem">
@@ -21,7 +26,11 @@ export const ProductItem = ({ product }) => {
           <p>{product.title}</p>
         </div>
         <figure onClick={() => handleClick(product)}>
-          <img src={bt_add_to_cart} alt="" />
+          {itsProductAdded() ? (
+            <img src={added_to_cart} alt="" />
+          ) : (
+            <img src={bt_add_to_cart} alt="" />
+          )}
         </figure>
       </div>
     </div>

@@ -2,8 +2,9 @@
 
 .MyOrder {
 	width: 360px;
-	height: fit-content;
-	padding: 24px;
+    height: fit-content;
+    max-height: 90vh;
+    overflow-y: auto;
 	box-sizing: border-box;
 	position: absolute;
 	right: 0;
@@ -12,6 +13,15 @@
 	bottom: 0;
 	border-radius: 6px;
 	border:  1px solid var(--very-light-pink);
+}
+.MyOrder > * {
+    margin: 24px;
+}
+.buy-contianer{
+	position: sticky;
+    bottom: 0;
+    background: var(--white);	
+    padding-bottom: 25px;
 }
 .order-arrow{
 	cursor: pointer;

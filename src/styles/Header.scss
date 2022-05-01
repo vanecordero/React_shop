@@ -1,5 +1,9 @@
 @use 'vars';
-
+.Layout > nav{
+  position: sticky;
+  background: var(--white);
+  top: 0;
+}
 nav {
   display: flex;
   justify-content: space-between;
@@ -40,10 +44,15 @@ nav {
 
 @media (max-width: 640px) {
 
+  .navbar-left.desk-menu{
+     display: none;
+   }
   .menu{
     display: block;
   }
-  
+  .menu-container{
+    justify-content: center;
+  }
   .nav-icon1{
     width: 35px;
     height: 25px;
