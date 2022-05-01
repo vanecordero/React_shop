@@ -7,6 +7,9 @@
 	place-content: center;
 	margin: 3em 0 0 0;
 }
+.main-container{
+	min-height: 100vh;
+}
 
 @media (max-width: 640px) {
 	.ProductList {

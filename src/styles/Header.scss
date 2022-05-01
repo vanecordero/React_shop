@@ -1,4 +1,8 @@
 @use 'vars';
+
+.Layout{
+  padding-bottom: 2rem;
+}
 .Layout > nav{
   position: sticky;
   background: var(--white);
