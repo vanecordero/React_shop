@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { ProductList } from "../containers/ProductList";
 
 export const Home = () => {

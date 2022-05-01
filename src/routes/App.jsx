@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "@styles/global.css";
 import { Layout } from "@containers/Layout";
 import { Home } from "@pages/Home";
+import { ByFilter } from "@pages/ByFilter";
 import { Login } from "@pages/Login";
 import { PasswordRecovery } from "@pages/PasswordRecovery";
 import { SendEmail } from "@pages/SendEmail";
@@ -24,6 +25,7 @@ const App = () => {
           <Layout>
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/category/:category" element={<ByFilter />} />
               <Route path="/login" element={<Login />} />
               <Route path="/password-recovery" element={<PasswordRecovery />} />
               <Route path="/send-email" element={<SendEmail />} />

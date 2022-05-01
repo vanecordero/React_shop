@@ -1,4 +1,5 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "@styles/Header.scss";
 import { Menu } from "@components/Menu";
 import icon_menu from "@icons/icon_menu.svg";
@@ -6,14 +7,22 @@ import logo_yard from "@logos/logo_yard_sale.svg";
 import icon_shopping_cart from "@icons/icon_shopping_cart.svg";
 import { AppContext } from "@context/AppContext";
 import { MyOrder } from "@containers/MyOrder";
+import { useGetCategory } from "@hooks/useGetCategory";
+
+const API = process.env.API;
 
 export const Header = () => {
+  const categories = useGetCategory(`${API}categories`);
   const [toogle, setToogle] = useState(false);
   const [toogleOrder, setToogleOrder] = useState(false);
-  const { state } = useContext(AppContext);
+  const { state, addCategories, addCategoryId } = useContext(AppContext);
 
+  useEffect(() => {
+    categories.length !== 0 && addCategories(categories);
+  }, [categories]);
   const handleToogle = () => setToogle(!toogle);
   const handleToogleOrder = () => setToogleOrder(!toogleOrder);
+  const setCategoryId = (id) => addCategoryId(id);
 
   return (
     <nav>
@@ -24,22 +33,18 @@ export const Header = () => {
 
         <ul>
           <li>
-            <a href="/">All</a>
+            <Link to="/">All</Link>
           </li>
           <li>
-            <a href="/">Clothes</a>
-          </li>
-          <li>
-            <a href="/">Electronics</a>
-          </li>
-          <li>
-            <a href="/">Furnitures</a>
-          </li>
-          <li>
-            <a href="/">Toys</a>
-          </li>
-          <li>
-            <a href="/">Others</a>
+            {categories.map(({ name, id }) => (
+              <Link
+                key={`category_${id}`}
+                to={`/category/${name}`}
+                onClick={() => setCategoryId(id)}
+              >
+                {name}
+              </Link>
+            ))}
           </li>
         </ul>
       </div>
