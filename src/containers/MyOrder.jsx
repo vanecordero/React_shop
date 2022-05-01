@@ -16,7 +16,7 @@ export const MyOrder = () => {
   return (
     <aside className="MyOrder">
       <div className="title-container">
-        <img src={flechita} alt="arrow" />
+        <img className="order-arrow" src={flechita} alt="arrow" />
         <p className="title">My order</p>
       </div>
       <div className="my-order-content">

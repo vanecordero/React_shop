@@ -19,7 +19,12 @@ export const OrderItem = ({ product }) => {
       </figure>
       <p>{product.title}</p>
       <p>${product.price}</p>
-      <img src={icon_close} alt="close" onClick={() => handleClick(product)} />
+      <img
+        className="delete-order"
+        src={icon_close}
+        alt="close"
+        onClick={() => handleClick(product)}
+      />
     </div>
   );
 };
